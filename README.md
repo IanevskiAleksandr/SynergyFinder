@@ -18,6 +18,6 @@ For any questions please contact **Aleksandr Ianevski** [@AleksandrIanevski](ale
 
 ## Copyright and license
 
-Code copyright 2017 SynergyFinder, Inc.
+Code copyright 2017 SynergyFinder
 
 Code released under the [MIT license] (https://github.com/AleksandrIanevski/SynergyFinder/blob/master/LICENSE)
