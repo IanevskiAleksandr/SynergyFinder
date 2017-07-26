@@ -8,6 +8,9 @@
 **SynergyFinder** front-end web application source code. The public version of web application (https://synergyfinder.fimm.fi) is hosted by Shiny Server. The R-package and its source-code are freely available at http://bioconductor.org/packages/release/bioc/html/synergyfinder.html.
 
 
+##
+
+
 ![alt text](https://cdn.rawgit.com/AleksandrIanevski/SynergyFinder/3a2b9547/Picture1.png)
 
 
@@ -17,4 +20,4 @@ For any questions please contact **Aleksandr Ianevski** [@AleksandrIanevski](ale
 
 Code copyright 2017 SynergyFinder, Inc.
 
-Code released under the [MIT license]
+Code released under the [MIT license] (https://github.com/AleksandrIanevski/SynergyFinder/blob/master/LICENSE)
