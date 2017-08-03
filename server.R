@@ -1,4 +1,4 @@
-lapply(c("ggplot2", "scales", "gplots", "lattice", "kriging", "plotly", "grid", "reshape2", "xtable", "synergyfinder", "AllSynergy"), library, character.only = T)
+lapply(c("ggplot2", "scales", "gplots", "lattice", "kriging", "plotly", "grid", "reshape2", "xtable", "synergyfinder"), library, character.only = T)
 sapply(c('CalcPlotSynergy.R', 'CalcPlotDose.R', 'getData.R'),source,.GlobalEnv)
 reportspath = "/usr/srv/app/reports"; vals <- reactiveValues(users_=0)
 
