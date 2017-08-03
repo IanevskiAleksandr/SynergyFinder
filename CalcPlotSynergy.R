@@ -45,10 +45,26 @@ calcsyn <- compiler::cmpfun(function(scores, drug.pairs)
   na <- length(a); nb <- length(b)
   res1 <- as.double(rep(0, na * nb))
   res2 <- as.integer(rep(0, na * nb))
-  res = krig(xseq = xseq, kriged = kriged[["map"]]$pred, a = a, yseq = yseq, b = b,  
-             z_len = length(kriged[["map"]]$pred), res1 = res1, na = na, nb = nb, res2 = res2)
+   # no more Rcpp here
+  #res = krig(xseq = xseq, kriged = kriged[["map"]]$pred, a = a, yseq = yseq, b = b,  
+  #           z_len = length(kriged[["map"]]$pred), res1 = res1, na = na, nb = nb, res2 = res2)
+  #res1 = res[[1]]; res1[res[[2]] == 0] <- NA
   
-  res1 = res[[1]]; res1[res[[2]] == 0] <- NA
+  z.len = length(kriged[["map"]]$pred); #
+        for(idx1 in 1:na) { #
+        for(idx2 in 1:nb) { #
+          for(idx3 in 1:z.len) { #
+            if(xseq[idx3] == a[idx1] && yseq[idx3] == b[idx2]) { #
+              indx_ = idx2+(idx1-1)*nb; #
+              res1[indx_] <- kriged[["map"]]$pred[idx3] #
+              res2[indx_] <- 1 #
+              break #
+            } #
+          } #
+        } #
+      } #
+	  
+	  res1[res2 == 0] <- NA #
   cMat <- matrix(res1, na, nb, byrow = !0)
   
   # most synergystic region
